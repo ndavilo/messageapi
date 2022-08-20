@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  Group room
+{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+  <h2>Group Messages {{room}} - share to join!</h2>
+  <div class="container">
+    <h2>created by: {{creator_name}} - {{users_count}} Members</h2>
+  {% for message, value in zipped_message_list %}
+      {% if message.user == request.user %}
+        <div class="sent-message">
+          <p class="user"><bold>{{message.user}}</bold></p>
+          <p style="display:inline">{{value}}</p><p class="date" style="display:inline">  -{{message.date}}</p>
+        </div>
+      {% else %}
+      <div class="received-message">
+        <p class="user"><bold>{{message.user}}{{message.image}}</bold></p>
+        <p style="display:inline">{{value}}</p><p class="date" style="display:inline">  -{{message.date}}</p>
+      </div>
+      {% endif %}
+  {% endfor %}
+      <form id="post-form" method="POST" action="send">
+          {% csrf_token %}
+          <input type="hidden" name="username" id="username" value="{{ user.username }}"/>
+          <input type="hidden" name="room_id" id="room_id" value="{{ room.id }}"/>
+          <textarea style="height: 12vh; width: 99%; margin: 15px 0; border-radius: 4px;" name="message" id="message" placeholder="{{ user.username }}: "></textarea>
+          <input type="submit" value="Send">
+      </form>
+    {% if user.id == creator_id %}
+        <form id="post-form" method="POST" action="addusers">
+          {% csrf_token %}
+          <input type="text" name="alloweduser" id="alloweduser" placeholder="Add or Remove Allowed username here! " width="100px"/>
+          <input type="submit" value="Send">
+        </form>
+    {% endif %}
+  </div>
+{% endif %}
+{% endblock %}
+

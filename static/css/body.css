@@ -1,0 +1,37 @@
+h2 {
+  color: #e4a51f;
+  word-wrap: break-word;
+}
+h1 {
+  text-transform: uppercase;
+  color: red;
+}
+.container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  overflow: scroll;
+  word-wrap: break-word;
+}
+.error_container{
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+.error_container, span{
+  color: red;
+}
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}

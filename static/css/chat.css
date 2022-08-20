@@ -1,0 +1,84 @@
+
+.sent-message {
+  overflow: scroll;
+  background-color: #f1ce80;
+  border-radius: 4px;
+  margin: 8px 0;
+  padding: 10px 25px;
+  width: 70%;
+}
+.received-message {
+  overflow:  scroll;
+  background-color: #e98080;
+  color: #fff;
+  border-radius: 4px;
+  margin: 8px 0;
+  padding: 10px 25px;
+  width: 70%;
+  float: right;
+}
+.empty-text {
+  color: #777;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.user{
+  font-size: 1rem;
+  text-shadow: 1px 1px 1px red,
+               2px 2px 1px red;
+  text-align: center;
+  opacity: 0.5;
+}
+.user:hover{
+  opacity: 1;
+}
+.date{
+  opacity: 0.1;
+}
+.date:hover{
+  opacity: 1;
+}
+input, select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #e4a51f;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #dd0e0e;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  word-wrap: break-word;
+}
+button{
+  width: 100%;
+  background-color: #e4a51f;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #dd0e0e;
+}
