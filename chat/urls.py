@@ -8,7 +8,7 @@ router.register(r'message', MessageViewSet)
 urlpatterns = [
     path('home/', group, name='group'),
     path('<str:room>/<int:pk>/', RoomView.as_view(), name='room'),
-    path('checkview', checkview, name='checkview'),
+    path('home/checkview', checkview, name='checkview'),
     path('<str:room>/<int:pk>/send', SendGroupMessage.as_view(), name='send'),
     path('<str:room>/<int:pk>/addusers', AddAllowedUserView.as_view(), name='addusers'),
     path('', include(router.urls)),

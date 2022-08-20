@@ -7,12 +7,10 @@ from django.forms import PasswordInput
 
 class SignUpForm(UserCreationForm):
 	email 		=	forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
-	first_name	=	forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'})) 
-	last_name	=	forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
 
 	class Meta:
 		model 	=	User
-		fields 	=	('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
+		fields 	=	('username', 'email', 'password1', 'password2')
 
 
 	def __init__ (self, *args, **kwargs):
@@ -24,15 +22,13 @@ class SignUpForm(UserCreationForm):
 
 class EditSettingsForm(UserChangeForm):
 	email 		=	forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
-	first_name	=	forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'})) 
-	last_name	=	forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
 	password 	=	forms.CharField(required=False, max_length=32, widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Click on Change password bellow'}))
 
 
 
 	class Meta:
 		model 	=	User
-		fields 	=	('first_name', 'last_name', 'email')
+		fields 	=	('email',)
 
 class PasswordChangingForm(PasswordChangeForm):
 	old_password 		=	forms.CharField(max_length=100, widget=forms.PasswordInput(attrs={'class': 'form-control', 'type':'password'}))
